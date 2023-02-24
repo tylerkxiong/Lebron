@@ -1,0 +1,126 @@
+body{
+    background-color: rgb(209, 209, 209);
+}
+.Bar{
+    display: flex;
+    height: 3rem;
+    font-size: 115%;
+    overflow: hidden;
+    overflow-x: scroll;
+    align-items: center;
+    box-sizing: border-box;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+}
+.latest{
+    display: inline;
+    background-color: blue;
+    color: whitesmoke;
+    padding: 2%;
+    z-index: 1;
+}
+.marquee{
+    width: fit-content;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    animation: scroll 8s linear 0s infinite;
+    transform: translateX(100%);
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+    padding: 1%;
+    padding-left: 3%;
+    width: 22rem;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.marquee:hover{
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0%{
+        transform: translate(100, 0);
+    }
+
+    100%{
+        transform: translate(-100%, 0);
+    }
+}
+.nbaImage{
+    height: 85%;
+}
+
+.lebron{
+    position: relative;
+    width: 100%;
+    transition: opacity ease 200ms;
+    opacity: 1;
+}
+
+.lebron:hover{
+    opacity: .7;
+}
+.lebron:hover .name{
+    opacity: 1;
+}
+
+.name{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    opacity: 0;
+    transition: opacity ease-out 250ms;
+}   
+
+.lebron-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    object-fit: cover;
+}
+.heading{
+    font-weight: bold;
+    height: 20%;
+}
+
+.date{
+    height: 20%;
+    color: rgba(70, 70, 70, 1);
+}
+
+.details{
+    
+}
+
+.leftside{
+    height: 20rem;
+}
+.article{
+    position: relative;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 65% 35%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 50rem) {
+    .article{
+        grid-template-columns: unset;
+    }
+}
